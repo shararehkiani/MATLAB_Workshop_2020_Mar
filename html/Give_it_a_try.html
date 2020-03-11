@@ -1,0 +1,327 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Give_it_a_try</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-03-11"><meta name="DC.source" content="Give_it_a_try.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Give it a try (1)</a></li><li><a href="#3">Give it a try (2)</a></li><li><a href="#4">Give it a try (3)</a></li><li><a href="#5">Give it a try (4)</a></li><li><a href="#6">Give it a try (5)</a></li><li><a href="#7">Give it a try (6)</a></li><li><a href="#8">Give it a try (7)</a></li><li><a href="#9">Give-it-a-try (8)</a></li><li><a href="#10">Give-it-a-try (9)</a></li></ul></div><pre class="codeinput">clc, clear <span class="string">all</span>, close <span class="string">all</span>
+</pre><h2 id="2">Give it a try (1)</h2><pre class="codeinput">x = 1/(2^2 + sqrt(3)) + 4/5;
+
+y = sin(pi) + exp(1i* pi);
+</pre><h2 id="3">Give it a try (2)</h2><pre class="codeinput">clear <span class="string">all</span>
+
+x = linspace(0,2*pi, 201);  <span class="comment">% x = 0 : pi/100: 2*pi</span>
+y1 = 2 * sin(x);
+y2 = sin(x);
+y3 = 0.5 * sin(x);
+figure
+plot(x, y1, <span class="string">'g--'</span>, x,y2, <span class="string">'b-'</span>, x, y3, <span class="string">'r:'</span>)
+xlabel(<span class="string">'0 \leq x \leq 2\pi'</span>)
+ylabel(<span class="string">'Sine functions'</span>)
+legend(<span class="string">'2*sin(x)'</span>, <span class="string">'sin(x)'</span>, <span class="string">'0.5*sin(x)'</span>)
+title(<span class="string">'Multiple plots'</span>)
+axis([0 2*pi -3 3])
+</pre><img vspace="5" hspace="5" src="Give_it_a_try_01.png" alt=""> <h2 id="4">Give it a try (3)</h2><pre class="codeinput">clear <span class="string">all</span>
+
+[X, Y] = meshgrid(-10: .5 : 10);
+R = sqrt(X.^2 + Y.^2)+ eps ;
+Z = sin(R)./R;
+figure
+subplot(3,1,1)
+mesh(X,Y, Z)
+title(<span class="string">'Mesh plot'</span>)
+subplot(3,1,2)
+surf(X,Y, Z)
+title(<span class="string">'Surf plot'</span>)
+subplot(3,1,3)
+plot3(X,Y, Z)
+title(<span class="string">'plot3'</span>)
+grid <span class="string">on</span>
+</pre><img vspace="5" hspace="5" src="Give_it_a_try_02.png" alt=""> <h2 id="5">Give it a try (4)</h2><pre class="codeinput">clear <span class="string">all</span>
+
+A = magic(4)  <span class="comment">%rand(4,4)</span>
+A([1,4], 3) = 0
+</pre><pre class="codeoutput">
+A =
+
+    16     2     3    13
+     5    11    10     8
+     9     7     6    12
+     4    14    15     1
+
+
+A =
+
+    16     2     0    13
+     5    11    10     8
+     9     7     6    12
+     4    14     0     1
+
+</pre><h2 id="6">Give it a try (5)</h2><pre class="codeinput">clear <span class="string">all</span>
+
+A = [ 1 2 3; 4 5 6; 7 8 0];
+b = [1; 1; 1];
+x = inv(A)*b   <span class="comment">% x = A\b   % using backslash operator</span>
+</pre><pre class="codeoutput">
+x =
+
+  -1.000000000000000
+   1.000000000000000
+  -0.000000000000000
+
+</pre><h2 id="7">Give it a try (6)</h2><pre class="codeinput">clear <span class="string">all</span>
+sym <span class="string">x</span>;
+x = factorial(32)-exp(100);
+x_5 = vpa(x,5)
+x_50 = vpa(x,50)   <span class="comment">% x_50 = vpa('factorial(32)-exp(100)',50)</span>
+</pre><pre class="codeoutput"> 
+x_5 =
+ 
+-2.6881e+43
+ 
+ 
+x_50 =
+ 
+-26881171155030520819693839094190694069174272.0
+ 
+</pre><h2 id="8">Give it a try (7)</h2><pre class="codeinput">clear <span class="string">all</span>
+<span class="comment">% sym x</span>
+figure
+subplot(1,2,1)
+ezplot(<span class="string">'sin(x)/x'</span>,[-4*pi 4*pi]);
+title(<span class="string">'ezplot'</span>)
+grid <span class="string">on</span>
+subplot(1,2,2)
+fplot(@(y) sin(y)./y,<span class="string">'-*'</span>)
+title(<span class="string">'fplot'</span>)
+axis([-4*pi 4*pi -.3 1.1 ])
+grid <span class="string">on</span>
+</pre><img vspace="5" hspace="5" src="Give_it_a_try_03.png" alt=""> <h2 id="9">Give-it-a-try (8)</h2><pre class="codeinput"><span class="comment">% Reads in a grade and writes out if the student passes or fails</span>
+
+grade = input(<span class="string">'Enter your grade:\n'</span>);
+<span class="keyword">if</span> grade &gt;= 50
+    fprintf(<span class="string">'Congraulations, you passed!'</span>)
+<span class="keyword">else</span>
+    fprintf(<span class="string">'I am sorry, You faild!'</span>)
+<span class="keyword">end</span>
+</pre><pre class="codeoutput error">Error using input
+Cannot call INPUT from EVALC.
+
+Error in Give_it_a_try (line 91)
+grade = input('Enter your grade:\n');
+</pre><h2 id="10">Give-it-a-try (9)</h2><pre class="codeinput">clear <span class="string">all</span>
+
+<span class="comment">% This program evaluates the sum of the elements of a  m \times n</span>
+<span class="comment">% matrix</span>
+
+<span class="comment">% read the size of the matrix</span>
+m = input(<span class="string">'Enter the number of rows \n'</span>);
+n = input(<span class="string">'Enter the number of coumns \n'</span>);
+
+<span class="comment">% generate the random-valued matrix</span>
+
+A = rand(m,n);
+
+<span class="comment">% initialize the sum</span>
+sum = 0;
+
+<span class="comment">% loops</span>
+<span class="keyword">for</span> i = 1:m
+    <span class="keyword">for</span> j = 1:n
+        sum = sum + A(i,j);
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+fprintf(<span class="string">'The total sum is %g\n'</span>,sum)
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc, clear all, close all
+
+%% Give it a try (1)
+
+
+x = 1/(2^2 + sqrt(3)) + 4/5;
+
+y = sin(pi) + exp(1i* pi);
+
+%%  Give it a try (2)
+
+clear all
+
+x = linspace(0,2*pi, 201);  % x = 0 : pi/100: 2*pi
+y1 = 2 * sin(x);
+y2 = sin(x);
+y3 = 0.5 * sin(x);
+figure
+plot(x, y1, 'gREPLACE_WITH_DASH_DASH', x,y2, 'b-', x, y3, 'r:')
+xlabel('0 \leq x \leq 2\pi')
+ylabel('Sine functions')
+legend('2*sin(x)', 'sin(x)', '0.5*sin(x)')
+title('Multiple plots')
+axis([0 2*pi -3 3])
+
+
+%%  Give it a try (3)
+clear all
+
+[X, Y] = meshgrid(-10: .5 : 10);
+R = sqrt(X.^2 + Y.^2)+ eps ;
+Z = sin(R)./R;
+figure
+subplot(3,1,1)
+mesh(X,Y, Z)
+title('Mesh plot')
+subplot(3,1,2)
+surf(X,Y, Z)
+title('Surf plot')
+subplot(3,1,3)
+plot3(X,Y, Z)
+title('plot3')
+grid on
+
+
+%%   Give it a try (4)
+clear all
+
+A = magic(4)  %rand(4,4)
+A([1,4], 3) = 0 
+
+
+
+%%   Give it a try (5)
+clear all 
+
+A = [ 1 2 3; 4 5 6; 7 8 0];
+b = [1; 1; 1];
+x = inv(A)*b   % x = A\b   % using backslash operator
+
+
+
+%%   Give it a try (6)
+
+clear all
+sym x;
+x = factorial(32)-exp(100);
+x_5 = vpa(x,5)
+x_50 = vpa(x,50)   % x_50 = vpa('factorial(32)-exp(100)',50)
+
+%%  Give it a try (7)
+
+clear all
+% sym x 
+figure
+subplot(1,2,1)
+ezplot('sin(x)/x',[-4*pi 4*pi]);
+title('ezplot')
+grid on 
+subplot(1,2,2)
+fplot(@(y) sin(y)./y,'-*')
+title('fplot')
+axis([-4*pi 4*pi -.3 1.1 ])
+grid on
+
+
+%%  Give-it-a-try (8)
+
+% Reads in a grade and writes out if the student passes or fails
+
+grade = input('Enter your grade:\n');
+if grade >= 50
+    fprintf('Congraulations, you passed!')
+else
+    fprintf('I am sorry, You faild!')
+end
+
+
+%%  Give-it-a-try (9)
+clear all
+
+% This program evaluates the sum of the elements of a  m \times n 
+% matrix
+
+% read the size of the matrix
+m = input('Enter the number of rows \n');
+n = input('Enter the number of coumns \n');
+
+% generate the random-valued matrix
+
+A = rand(m,n);
+
+% initialize the sum
+sum = 0; 
+
+% loops
+for i = 1:m
+    for j = 1:n
+        sum = sum + A(i,j);
+    end
+end
+
+fprintf('The total sum is %g\n',sum)
+
+
+
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,862 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Introduction to MATLAB</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-03-11"><meta name="DC.source" content="Matlab_workshop_academicSkills_2020.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Introduction to MATLAB</h1><!--introduction--><div><ul><li>The name MATLAB stands for MATrix LABoratory.</li><li>MATLAB integrates computation, visualization and programming environment.</li><li>MATLAB is a modern programming language environment: it has sophisticated data structures, contains built-in editing and debugging tools, and supports object-oriented programming.</li><li>MATLAB has poweful built-in routines that enable a wide variety of computations.</li><li>Toolboxes are packages that collect specific applications (Use help to explore different toolboxes).</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">MATLAB Basics</a></li><li><a href="#4">MATLAB as a calculator</a></li><li><a href="#13">Give-it-a-try (1)</a></li><li><a href="#15">Basics of Plotting</a></li><li><a href="#19">Give-it-a-try (2)</a></li><li><a href="#21">Other 2D and 3D Plots :</a></li><li><a href="#29">Give-it-a-try (3)</a></li><li><a href="#33">Matrices and Arrays</a></li><li><a href="#40">Give-it-a-try (4)</a></li><li><a href="#41">Array Operations</a></li><li><a href="#47">Give-it-a-try (5)</a></li><li><a href="#49">Multidimensional Arrays</a></li><li><a href="#52">Cell Arrays</a></li><li><a href="#56">Structure Array</a></li><li><a href="#61">Symmbolic Toolbox</a></li><li><a href="#66">Give-it-a-try (6)</a></li><li><a href="#68">Other Useful Symbolic functions</a></li><li><a href="#77">Give-it-a-try (7)</a></li><li><a href="#79">Introduction to Programming in MATLAB</a></li><li><a href="#91">Give-it-a-try (8)</a></li><li><a href="#92">Other Control flow commands</a></li><li><a href="#98">Give-it-a-try (9)</a></li><li><a href="#100">User-Defined Functions</a></li><li><a href="#102">(1) Anonymous Functions</a></li><li><a href="#115">(2) Function Files</a></li><li><a href="#121">References</a></li></ul></div><h2 id="1">MATLAB Basics</h2><p>MATLAB development IDE can be launched from the icon created on the desktop. The main working window in MATLAB is called the desktop. When MATLAB is started, the desktop appears in its default layout</p><div><ul><li><b>Current Folder</b> &#8212; Access your files.</li><li><b>Command Window</b> &#8212; Enter commands at the command line, indicated by the prompt (&gt;&gt;).</li><li><b>M-file editor/debugger window</b>  &#8212; create and edit scripts of commands called M-files</li><li><b>Workspace</b> &#8212; Explore data that you create or import from files.</li></ul></div><div><ul><li><b>Getting Help</b>  &#8212; Online help, help bar,</li></ul></div><p>help <i>command</i>   (e.g. plot)</p><p>lookfor  <i>command</i></p><p>doc <i>command</i></p><div><ul><li><b>Interrupting and Terminating MATLAB</b>  &#8212; Ctrl-C, quit, exit</li></ul></div><div><ul><li><b>Simulink</b> : It provides an environment for multidomain simulation and model-based design for dynamic and embedded systems. It provides an interactive graphical environment and a customizable set of block libraries.With an easy-to-use graphical design environment, Simulink allows us to design, simulate, implement, and test a variety of timevarying systems, including communications, control, signal processing, and video processing.</li></ul></div><h2 id="4">MATLAB as a calculator</h2><p><img vspace="5" hspace="5" src="matlab_operator.PNG" alt=""> </p><div><ul><li><b>Hierarchy of arithmetic operations</b></li></ul></div><div><ol><li>The contents of all parentheses, starting from the innermost parentheses and working outward.</li><li>All exponentials, from left to right.</li><li>All multiplications and divisions, from left to right</li><li>All additions and subtractions, from left to right.</li></ol></div><div><ul><li><b>Elementry Functions</b></li></ul></div><p><img vspace="5" hspace="5" src="basic_functions.PNG" alt=""> </p><div><ul><li><b>Predefined Constants</b></li></ul></div><p><img vspace="5" hspace="5" src="predefined_constant.PNG" alt=""> </p><div><ul><li><b>Variables and Assignments</b> :</li></ul></div><div><ol><li>Must start with a letter</li><li>May consist letters, digits, and the underscore character</li><li>May be as long as you would like, but MATLAB only recognize the first 31 chararcters</li><li>Is case sensitive</li><li>If a variable name is not specified, MATLAB will assign the default variable, <b>ans</b></li></ol></div><div><ul><li>Entering multiple statements per line: Use commas (,) or semicolons (;)</li></ul></div><div><ul><li>Percent sign (%) begins a comment.</li><li>Three periods (...) at the end of a command indicates that the command continues on the next line</li><li>Esc key erases the current command.</li><li>Press the up/down arrow cursor to scroll through previous commands.</li></ul></div><div><ul><li><b>Displaying Values and Text</b> :</li></ul></div><div><ol><li>By entering the variable name at the MATLAB prompt, without a semicolon.</li><li>By using the command <b>disp</b>: disp(variable), disp(string)</li><li>By using the command <b>fprintf</b></li></ol></div><h2 id="13">Give-it-a-try (1)</h2><p>Calculate the result of the following expressions:</p><p><img src="Matlab_workshop_academicSkills_2020_eq04444599940309201213.png" alt="$x = \frac{1}{2^2+\sqrt{3}}+\frac{4}{5}$"></p><p><img src="Matlab_workshop_academicSkills_2020_eq05021872711566483868.png" alt="$$y = sin(\pi) + e^{\pi i}$$"></p><h2 id="15">Basics of Plotting</h2><p>MATLAB&#8217;s extensive, device-independent plotting capabilities are among its most powerful features. They make it very easy to plot any data at any time.</p><div><ul><li><b>Plot in 2D</b> : two vectors of x-coordinates and y-coordinates with the same size are needed to locate the poits (x,y); x and y must have an identical array form</li><li>plot(X,Y)</li></ul></div><div><ul><li><b>Adding titles, axis labels and annotaions</b>: title(string), xlabel(string), ylabel(string), legend(), axis(),</li></ul></div><div><ul><li><b>Multiple data sets in one plot</b></li></ul></div><div><ol><li>plot(X1,Y1,LineSpec1,...,Xn,Yn,LineSpecn)</li></ol></div><div><ul><li><b>Specifying line styles and colors</b> :</li></ul></div><div><ol><li>plot(X,Y, 'Style_color_marker')</li></ol></div><p><img vspace="5" hspace="5" src="plot_attributes.PNG" alt=""> </p><h2 id="19">Give-it-a-try (2)</h2><p>Plot the following functions in the interval <img src="Matlab_workshop_academicSkills_2020_eq17460671640908402553.png" alt="$0 \leq x \leq 2 \pi$">,</p><p><img src="Matlab_workshop_academicSkills_2020_eq17631956687890895133.png" alt="$y_1 = 2 sin(x), \;\;  y_2 = sin(x), \;\; y_3 = 0.5 sin(x)$"></p><h2 id="21">Other 2D and 3D Plots :</h2><div><ul><li><b>Other 2D plots</b></li></ul></div><div><ol><li>Polar plot: plots a function in polar coordination.</li><li>Bar plot</li><li>Stairs plot</li><li>Histogram plot</li><li>Stem plot</li><li>Compass plot</li><li>Pie plot</li><li>semilogx, semilogy, loglog</li></ol></div><div><ul><li><b>Plot from Workspace</b>: right click on the variable in workspace and plot the variable</li></ul></div><div><ul><li><b>Graph Management Functions</b>:</li></ul></div><div><ol><li><b>subplot</b> is used to visualize separate plots in a same figure,  <i>subplot(m,n,p)</i> : divides the figure in <img src="Matlab_workshop_academicSkills_2020_eq03421469680577370400.png" alt="$m \times n$"> subplots, and p activates each subplot</li></ol></div><div><ol><li><b>figure</b> (n)</li><li><b>hold on</b> : to draw more than one curve, surface, or line (or combination of these) on a given graph</li></ol></div><div><ol><li><b>Save graphics</b> : MATLAB provides the means to convert a figure to a format compatible with many common print devices.</li></ol></div><p>print('-deps2', 'c:/path/FileName.eps')</p><div><ol><li><b>Save workspace variables</b>: save, save <i>data</i> , save <i>data x y</i></li></ol></div><div><ul><li><b>3D Plots</b></li></ul></div><div><ol><li>plot3</li><li>mesh</li><li>surf</li><li>bar3</li><li>contour/contour3</li><li>pie3</li><li>scatter3</li></ol></div><h2 id="29">Give-it-a-try (3)</h2><p>Use a 3D plot (mesh, surf, or plot3), to plot the following function over a surface on</p><p><img src="Matlab_workshop_academicSkills_2020_eq03357222501263536640.png" alt="$$-10 \leq x \leq 10, \;\;-10 \leq y \leq 10$$"></p><p><img src="Matlab_workshop_academicSkills_2020_eq17867837965724987645.png" alt="$$z = \frac{sin(\sqrt{x^2 + y^2})}{\sqrt{x^2 + y^2}}$$"></p><h2 id="33">Matrices and Arrays</h2><p>Arrays are the basic elements of the MATLAB environment.</p><div><ul><li><b>Scalars</b> : variables that represent single numbers.</li><li><b>Arrays</b> : Variables that represent more than one number. Each number is called an element of the array.</li><li><b>Row and Column Arrays (Vector)</b> : A row of numbers or a column of numbers</li><li><b>Two-Dimensionall Arrays (Matrix)</b> : A two-dimensional table of numbers.</li></ul></div><div><ul><li>Defining a row vector, a column vector, a matrix</li></ul></div><pre class="codeinput"> v = [1 4 6 7 8];
+ w = [1 ; 4 ; 6 ; 7 ; 8];
+ A = [1 2 3; 4 5 6; 7,8,9];
+</pre><div><ul><li><b>Array Indexing/Addressing</b>: indicates the location of an element in the array</li></ul></div><div><ol><li><b>Vector addressing</b> : A vector is addressed with an integer index (indexing starts from 1 in MATLAB).</li><li><b>Matrix addressing</b> : A matrix is addressed with two integer indices, first one represents the row index, and the second one represents the column index.</li><li><b>Colon Notation</b> : Addresses a block of elements (subarrays):  <i>(start:increment:end)</i></li><li><b>Vector creation Alternatives</b></li></ol></div><p><img vspace="5" hspace="5" src="vector_creation.PNG" alt=""> </p><pre class="codeinput">v(1:3);   <span class="comment">%sub-vector</span>
+v(3:end);
+w = v.';  <span class="comment">% transpose</span>
+
+A(2,1);   <span class="comment">% matrix element addressing</span>
+A(:);     <span class="comment">%vectorizing</span>
+A(2,:);      <span class="comment">% 2nd row of the matrix</span>
+
+B = A([2 3],[1 2]);  <span class="comment">% sub-matrix</span>
+C = A(1:2,2:3);      <span class="comment">% sub-matrix</span>
+A(:,2)=[];   <span class="comment">% deleting the 2nd column</span>
+
+x1 = 0:0.1:1;
+x2 = linspace(0,1,11);
+</pre><div><ul><li>Special functions to generate arrays</li></ul></div><div><ol><li>zeros(m,n,..)</li><li>ones(m,n,..)</li><li>randn, rand</li><li>eye(m,n)</li><li>magic(n) (square matrix)</li></ol></div><h2 id="40">Give-it-a-try (4)</h2><p>Generate a 4 by 4 matrix called A whose elements are non-zero. Use array indexing to assign zero to the (1,3)th and (4,3)-th element of A.</p><h2 id="41">Array Operations</h2><div><ul><li><b>Matrix arithmetic</b></li></ul></div><p><img vspace="5" hspace="5" src="mat_arit.PNG" alt=""> </p><div><ul><li><b>Array arithmetic</b> operations are done element-by-element</li></ul></div><p><img vspace="5" hspace="5" src="array_arit.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="array_arit_exm.PNG" alt=""> </p><div><ul><li><b>Important matrix functions</b></li></ul></div><p><img vspace="5" hspace="5" src="matrix_functions.PNG" alt=""> </p><h2 id="47">Give-it-a-try (5)</h2><p>Find the solution to the following system of linear equations. Hint: Convert the system to a matrix notation</p><p><img src="Matlab_workshop_academicSkills_2020_eq13660632715765073853.png" alt="$$Ax = b$$"></p><p><img vspace="5" hspace="5" src="GIAT_5.PNG" alt=""> </p><h2 id="49">Multidimensional Arrays</h2><p>MATLAB allows us to create arrays with as many dimensions as necessary for any given problem.</p><p><img vspace="5" hspace="5" src="multi_dim_array.PNG" alt=""> </p><pre class="codeinput">A = rand(2,3,4);
+A(:,:,2);
+</pre><h2 id="52">Cell Arrays</h2><div><ul><li>A cell array is a special MATLAB array whose elements are cells, containers that can hold other MATLAB arrays.</li><li>In programming terms, each element of a cell array is a pointer to another data structure, and those data structures can be of different types.</li><li>Cell arrays provide a great way to collect information about a problem, because all of the information can be kept together and accessed by a single name.</li><li>Cell arrays use braces &#8220;{}&#8221; instead of parentheses &#8220;()&#8221; for selecting and displaying the contents of cells.</li></ul></div><p><img vspace="5" hspace="5" src="cell_array.PNG" alt=""> </p><pre class="codeinput">my_cell{1,1}=magic(4);
+my_cell{1,2}=<span class="string">'Hello'</span>;
+my_cell;
+celldisp(my_cell);
+</pre><pre class="codeoutput"> 
+my_cell{1} =
+ 
+    16     2     3    13
+     5    11    10     8
+     9     7     6    12
+     4    14    15     1
+
+ 
+ 
+my_cell{2} =
+ 
+Hello
+ 
+</pre><pre class="codeinput">my_cell{1,1}(2,3) ; <span class="comment">% Indexing Cells</span>
+my_cell{1}=[] ;  <span class="comment">%  Deleting Cells in Arrays</span>
+</pre><h2 id="56">Structure Array</h2><p>An array is a data type in which there is a name for the whole data structure, but individual elements within the array are known only by number. A cell array is a data type in which there is a name for the whole data structure, but individual elements within the array are known only by number. However, the individual elements in the cell array may be of different types.  In contrast, a structure is a data type in which each individual  element has a name.  The individual elements of a structure are known as fields, and each field in a structure may have a different type.  The individual fields are addressed by combining the name of the structure with the name of the field, separated by a period.</p><div><ul><li>Creating Structure Array</li></ul></div><div><ol><li>A field at a time, using assignment statements</li><li>All at once, using the <i>struct</i> function</li></ol></div><pre class="codeinput">clear <span class="string">all</span>
+student.name = <span class="string">'John'</span>;
+student.add = <span class="string">'12 Main street'</span>;
+student.height = 180;
+student.GPA = <span class="string">'A'</span>;
+</pre><h2 id="61">Symmbolic Toolbox</h2><p>Symbolic Math Toolbox&#8482; provides functions for solving, plotting, and manipulating symbolic math equations. These symbols can be intermixed with nonsymbolic variable names, numbers, and MATLAB functions, with the result being a symbolic expression.</p><div><ul><li>use <b>syms</b> to declare the variables you plan to use to be symbolic variables.</li><li>The command <b>expand</b> multiplies out the expression;</li><li>The command <b>factor</b> restores the expression to factored form.</li><li>The command <b>simplify</b>  is used to express a formula as simply as possible</li></ul></div><p><b>Example</b> :</p><pre class="codeinput">clear <span class="string">all</span>
+syms <span class="string">x</span> <span class="string">y</span>            <span class="comment">%for real variables, syms x y real</span>
+expanded = expand((x-y)^3);
+factored = factor(expanded);
+simplified = simplify(sin(x)*cos(y)+cos(x)*sin(y));
+</pre><div><ul><li><b>Variable Precision Arithmetic</b> : <b>vpa</b> ('expression',n), results the precision with n desired numbers</li></ul></div><h2 id="66">Give-it-a-try (6)</h2><pre>Evaluate the following expression with 5, and 50 digitis of precision</pre><p><img src="Matlab_workshop_academicSkills_2020_eq11946950905037278440.png" alt="$$x = 32!-e^{100}$$"></p><h2 id="68">Other Useful Symbolic functions</h2><div><ul><li><b>Symbolic Differentiation and Integration</b></li></ul></div><div><ol><li><b>diff(f,x,n)</b> : differentiates f with respect to x, n times.(e.g. n=2 the second derivative)</li><li><b>int(f,x,c,d)</b> : integrates f with respect to x, c/d are lower/upper limits.</li><li>When c and d are omitted, the application of int results in the indefinite integral of f</li></ol></div><pre class="codeinput">clear <span class="string">all</span>
+syms <span class="string">b</span> <span class="string">t</span>;
+dt = diff(b*cos(b*t),t,1);
+db2 = diff(b*cos(b*t),b,2);
+it = int(dt,t);
+</pre><div><ul><li><b>limit(f,x,z)</b>: takes the limit a symbolic expression f as  x approaches the limiting value z</li><li><b>taylor(f,n,a,x)</b> : returns an n-term taylor series expansion of the function f about the point a</li><li><b>ilaplace(F,s,t)</b> : returns the inverse Laplace transform of F</li></ul></div><p>Inverse Laplace transform of the following expression using symbolic math Toolbox can be found as</p><p><img src="Matlab_workshop_academicSkills_2020_eq05256534756292257268.png" alt="$$F(s)=\frac{1}{s^2+2as+1}$$"></p><pre class="codeinput">syms <span class="string">s</span> <span class="string">t</span> <span class="string">a</span>
+F=1/(s^2+2*a*s+1);
+f = ilaplace(F,s,t);
+pretty(simplify(f));
+</pre><pre class="codeoutput">                       2
+exp(-a t) sinh(t sqrt(a  - 1))
+------------------------------
+               2
+         sqrt(a  - 1)
+
+</pre><div><ul><li><b>Symbolic Plot Functions</b> (Easy Plot) In all previous plots, we have created arrays of data to plot and passed those arrays to the plotting function. MATLAB also includes functions that will plot a function directly, without the necessity of creating intermediate data arrays.</li></ul></div><div><ol><li><b>ezplot</b> (fun,[xmin xmax]): The argument fun is either a function handle, the name of an M-file function, or a character string containing the functional expression to be evaluated.</li><li><b>fplot</b> (fun,[xmin xmax]):Function fplot is similar to but more sophisticated than ezplot.</li><li><b>ezplot3</b></li><li><b>fplot3</b></li><li><b>fsurf</b></li><li><b>fmesh</b></li><li><b>fcontour</b></li></ol></div><h2 id="77">Give-it-a-try (7)</h2><p>Use ezplot or fplot to plot the following function over <img src="Matlab_workshop_academicSkills_2020_eq08760415308878917211.png" alt="$-4\pi \leq x \leq 4 \pi$"></p><p><img src="Matlab_workshop_academicSkills_2020_eq17895785996945851739.png" alt="$$z = \frac{sin(x)}{x}$$"></p><h2 id="79">Introduction to Programming in MATLAB</h2><p>the commands entered in the Command Window cannot be saved and executed again for several times. Therefore, a di&reg;erent way of executing repeatedly commands with MATLAB is:</p><div><ol><li>create a file</li><li>save the file</li><li>run the file</li></ol></div><div><ul><li>Files containing programs using m-language are called m-files. They have an extension .m.</li></ul></div><p><b>Programming instructions</b> we present the basic programming instructions that we may require in a MATLAB m-file.</p><div><ul><li><b>If Statement</b></li></ul></div><p><img vspace="5" hspace="5" src="if_statet.PNG" alt=""> </p><div><ul><li><b>If-else Statement</b></li></ul></div><p><img vspace="5" hspace="5" src="if_else_stat.PNG" alt=""> </p><div><ul><li><b>elseif Statement</b></li></ul></div><p><img vspace="5" hspace="5" src="elseif_stat.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="if_operators.PNG" alt=""> </p><h2 id="91">Give-it-a-try (8)</h2><p>Write an M-file which reads the input data for a passing grade and indicates if the student passes or fails a course.  A passing grade has to be grater than 50. Hint: use input() function to read the grades.</p><h2 id="92">Other Control flow commands</h2><div><ul><li><b>Switch-case statement</b></li></ul></div><p><img vspace="5" hspace="5" src="switch_case_stat.PNG" alt=""> </p><div><ul><li><b>For Loop</b></li></ul></div><p><img vspace="5" hspace="5" src="for_loop.PNG" alt=""> </p><div><ul><li><b>while Loop</b></li></ul></div><p><img vspace="5" hspace="5" src="while_loop.PNG" alt=""> </p><h2 id="98">Give-it-a-try (9)</h2><p>Write a program which adds all the elements of an arbitrary size random-valued <img src="Matlab_workshop_academicSkills_2020_eq03421469680577370400.png" alt="$m \times n$"> matrix using the following double sum expression</p><p><img src="Matlab_workshop_academicSkills_2020_eq18422284575320962091.png" alt="$$sum = \sum_{i=1}^{m} \; \sum_{j=1}^{n}\; a_{ij}$$"></p><h2 id="100">User-Defined Functions</h2><p>In computer programming, functions are the principal tools for managing complexity. They allow a complicated program to be broken up into many simpler parts, parts that are easier to understand, easier to write, and easier to test.</p><div><ol><li>Anonymous Functions</li><li>Function Files</li></ol></div><h2 id="102">(1) Anonymous Functions</h2><div><ol><li>Anonymous functions are a means of creating functions for simple expressions without having to create M-files or subfunctions.</li><li>An anonymous function is a function that is not stored in a program file, but is associated with a variable whose data type is function_handle.</li><li>Anonymous functions can accept inputs and return outputs, just as standard functions do. However, they can contain only a single executable statement.</li></ol></div><pre class="language-matlab">_functionhandle=@(arguments)(expressions)_
+</pre><div><ul><li>The @ operator creates the handle, and the parentheses () immediately after the @ operator include the function input arguments.</li><li><b>Multiple Anonymous Functions</b> : The expression in an anonymous function can include another anonymous function. This is useful for passing different parameters to a function that you are evaluating over a range of values.</li></ul></div><p><b>Example</b> : Use anonymous function to solve the following equation:</p><p><img src="Matlab_workshop_academicSkills_2020_eq05289389298496185896.png" alt="$$g(c)=\int_{0}^{1} (x^2+cx+1) dx$$"></p><pre class="codeinput">clear <span class="string">all</span>,
+<span class="comment">% First method</span>
+c1 = 2;
+g_c1 = integral(@(x) (x.^2+c1*x+1),0,1);  <span class="comment">% g = integral(fun,xmin,xmax)</span>
+
+<span class="comment">% Second method</span>
+g_c = @(c) (integral(@(x) (x.^2 + c*x + 1),0,1));
+g_c(2);
+</pre><div><ul><li><b>Anonymous functions with Multiple Inputs or Outputs</b>: Anonymous functions require that you explicitly specify the input arguments as you would for a standard function, separating multiple inputs with commas. However, you do not explicitly define output arguments when you create an anonymous function. If the expression in the function returns multiple outputs, then you can request them when you call the function. Enclose multiple output variables in square brackets.</li></ul></div><p><b>Example</b>:</p><pre class="codeinput">close <span class="string">all</span>, clear <span class="string">all</span>
+c = 20;
+mygrid = @(x,y) ndgrid((-x:x/c:x),(-y:y/c:y));
+[x,y] = mygrid(pi,2*pi);
+z = sin(x) + cos(y);
+surf(x,y,z);
+</pre><img vspace="5" hspace="5" src="Matlab_workshop_academicSkills_2020_01.png" alt=""> <div><ul><li><b>Arrays of Anonymous Functions</b>: Although most MATLAB fundamental data types support multidimensional arrays, function handles must be scalars (single elements). However, you can store multiple function handles using a cell array or structure array. The most common approach is to use a cell array</li></ul></div><p><b>Example</b> :</p><pre class="codeinput">clear <span class="string">all</span>
+f = {@(x)x.^2;  @(y)y+10;   @(x,y)x.^2+y+10};
+<span class="comment">% access</span>
+x = 1;
+y = 10;
+
+first = f{1}(x);
+second = f{2}(y);
+third = f{3}(x,y);
+</pre><h2 id="115">(2) Function Files</h2><div><ul><li><b>function [y1,...,yN] = myfun(x1,...,xM)</b> :</li></ul></div><p>declares a function named myfun that accepts inputs x1,...,xM and returns outputs y1,...,yN. This declaration statement must be the first executable line of the function. * Save the function code in a text file with a .m extension. The name of the file should match the name of the first function in the file. * Valid function names begin with an alphabetic character, and can contain letters, numbers, or underscores. * Files can include multiple local functions or nested functions.</p><div><ul><li>Use the end keyword to indicate the end of each function in a file if:</li></ul></div><div><ol><li>Any function in the file contains a nested function</li><li>Any local function in the file uses the end keyword. Otherwise, the end keyword is optional.</li></ol></div><p><b>Example</b> :</p><p><img vspace="5" hspace="5" src="multiple_functions.PNG" alt=""> </p><h2 id="121">References</h2><div><ul><li>[1] Matlab Help</li><li>[2] Matlab programming with application for engineers, Stephen J. Chapman</li><li>[3] An introduction to Matlab Programming and numerical methods for engineers, Timmy Siauw.</li><li>[4] An engineer's guide to Matlab, Edward B. Magrab.</li><li>[5] Learning to program with Matlab building GUI tools, Craig s. Lent.</li><li>[6] A Guide to Matlab for beginners and experienced users, Brian R. Hunt.</li></ul></div><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Introduction to MATLAB
+% 
+% * The name MATLAB stands for MATrix LABoratory. 
+% * MATLAB integrates computation, visualization and programming environment. 
+% * MATLAB is a modern programming language environment: it has sophisticated data structures, contains
+% built-in editing and debugging tools, and supports object-oriented programming.
+% * MATLAB has poweful built-in routines that enable a wide variety of computations.
+% * Toolboxes are packages that collect specific applications (Use help to explore different toolboxes). 
+% 
+%
+%% MATLAB Basics
+%
+% MATLAB development IDE can be launched from the icon created on the desktop. The main working window in MATLAB is 
+% called the desktop. When MATLAB is started, the desktop appears in its default layout
+%
+% * *Current Folder* — Access your files.
+% * *Command Window* — Enter commands at the command line, indicated by the prompt (>>).
+% * *M-file editor/debugger window*  — create and edit scripts of commands
+% called M-files
+% * *Workspace* — Explore data that you create or import from files.
+%
+% * *Getting Help*  — Online help, help bar, 
+% 
+% help _command_   (e.g. plot)
+%
+% lookfor  _command_
+%
+% doc _command_  
+% 
+% * *Interrupting and Terminating MATLAB*  — Ctrl-C, quit, exit
+
+
+%%
+% * *Simulink* :
+% It provides an environment for multidomain simulation and
+% model-based design for dynamic and embedded systems.
+% It provides an interactive graphical
+% environment and a customizable set of block libraries.With an easy-to-use graphical design
+% environment, Simulink allows us to design, simulate, implement, and test a variety of timevarying
+% systems, including communications, control, signal processing, and video processing.
+%
+%%
+
+%%  MATLAB as a calculator
+%%
+%
+% 
+% <<matlab_operator.PNG>>
+% 
+%
+%%
+% * *Hierarchy of arithmetic operations*
+%
+% 
+% #  The contents of all parentheses, starting from the innermost
+% parentheses and working outward.
+% #  All exponentials, from left to right.
+% #  All multiplications and divisions, from left to right
+% #  All additions and subtractions, from left to right.
+%
+%% 
+% * *Elementry Functions*
+% 
+%%
+% 
+% <<basic_functions.PNG>>
+% 
+%%
+% * *Predefined Constants*
+% 
+% 
+% <<predefined_constant.PNG>>
+% 
+%% 
+% * *Variables and Assignments* :
+% 
+% 
+% # Must start with a letter
+% # May consist letters, digits, and the underscore character
+% # May be as long as you would like, but MATLAB only recognize the first
+% 31 chararcters
+% # Is case sensitive
+% # If a variable name is not specified, MATLAB will assign the default
+% variable, *ans*
+% 
+%%
+% * Entering multiple statements per line: Use commas (,) or semicolons (;)
+%
+% * Percent sign (%) begins a comment.
+% * Three periods (...) at the end of a command indicates that the command
+% continues on the next line
+% * Esc key erases the current command.
+% * Press the up/down arrow cursor to scroll through previous commands.
+%
+%% 
+% * *Displaying Values and Text* :
+% 
+% 
+% 
+% # By entering the variable name at the MATLAB prompt, without a
+% semicolon.
+% # By using the command *disp*: disp(variable), disp(string)
+% # By using the command *fprintf*
+% 
+%%  Give-it-a-try (1) 
+% Calculate the result of the following expressions:
+%
+% $x = \frac{1}{2^2+\sqrt{3}}+\frac{4}{5}$
+%%
+%  
+% 
+% $$y = sin(\pi) + e^{\pi i}$$
+% 
+% 
+
+
+
+
+
+%% Basics of Plotting
+% MATLAB’s extensive, device-independent plotting capabilities are among its
+% most powerful features. They make it very easy to plot any data at any time. 
+%
+% * *Plot in 2D* : two vectors of x-coordinates and y-coordinates with the same size are
+% needed to locate the poits (x,y); x and y must have an identical array form
+% * plot(X,Y)
+%
+% * *Adding titles, axis labels and annotaions*: 
+% title(string), xlabel(string), ylabel(string), legend(), axis(), 
+% 
+
+
+%%
+% * *Multiple data sets in one plot* 
+%
+% # plot(X1,Y1,LineSpec1,...,Xn,Yn,LineSpecn)
+% 
+%%
+% *  *Specifying line styles and colors* :
+%
+% # plot(X,Y, 'Style_color_marker')
+% 
+%%
+% 
+% <<plot_attributes.PNG>>
+% 
+
+%%   Give-it-a-try (2)
+% 
+% Plot the following functions in the interval $0 \leq x \leq 2 \pi$,
+% 
+% $y_1 = 2 sin(x), \;\;  y_2 = sin(x), \;\; y_3 = 0.5 sin(x)$
+%%
+%
+%
+
+%% Other 2D and 3D Plots :
+%%
+% * *Other 2D plots* 
+%
+% # Polar plot: plots a function in polar coordination.
+% # Bar plot 
+% # Stairs plot
+% # Histogram plot
+% # Stem plot
+% # Compass plot
+% # Pie plot
+% # semilogx, semilogy, loglog
+
+%%
+% *  *Plot from Workspace*:
+% right click on the variable in workspace and plot the variable
+%
+%% 
+% * *Graph Management Functions*: 
+%
+% # *subplot* is used to visualize separate plots in a same figure,
+%  _subplot(m,n,p)_ : divides the figure in $m \times n$ subplots, and p
+% activates each subplot
+% 
+% # *figure* (n) 
+% # *hold on* : to draw more than one curve, surface, or line (or combination of these) on a given graph
+
+%%
+
+%% 
+%
+% # *Save graphics* : MATLAB provides the means to convert a figure to a format compatible with many common print devices.
+% 
+% print('-deps2', 'c:/path/FileName.eps')
+%
+% # *Save workspace variables*: save, save _data_ , save _data x y_
+%
+%%
+% * *3D Plots*  
+
+%%
+% 
+% # plot3
+% # mesh
+% # surf
+% # bar3
+% # contour/contour3
+% # pie3
+% # scatter3
+
+%%  Give-it-a-try (3) 
+% Use a 3D plot (mesh, surf, or plot3), to plot the following function over
+% a surface on
+%
+% $$-10 \leq x \leq 10, \;\;-10 \leq y \leq 10$$
+% 
+%%
+% 
+% $$z = \frac{sin(\sqrt{x^2 + y^2})}{\sqrt{x^2 + y^2}}$$
+% 
+%%
+
+
+
+
+
+%%
+
+
+%% Matrices and Arrays 
+%  
+% Arrays are the basic elements of the MATLAB environment.
+% 
+% * *Scalars* : variables that represent single numbers.
+% * *Arrays* : Variables that represent more than one number. Each number is
+% called an element of the array. 
+% * *Row and Column Arrays (Vector)* : A row of numbers or a column of
+% numbers
+% * *Two-Dimensionall Arrays (Matrix)* : A two-dimensional table of
+% numbers. 
+% 
+%%  
+% * Defining a row vector, a column vector, a matrix
+
+%% 
+ v = [1 4 6 7 8];
+ w = [1 ; 4 ; 6 ; 7 ; 8];
+ A = [1 2 3; 4 5 6; 7,8,9];
+ 
+ 
+%%  
+% * *Array Indexing/Addressing*: indicates the location of an element in the array 
+% 
+% 
+% # *Vector addressing* : A vector is addressed with an integer index
+% (indexing starts from 1 in MATLAB).
+% #  *Matrix addressing* : A matrix is addressed with two integer indices, first
+% one represents the row index, and the second one represents the column
+% index. 
+% # *Colon Notation* : Addresses a block of elements (subarrays):
+%  _(start:increment:end)_
+% # *Vector creation Alternatives*
+% 
+%%
+% 
+% <<vector_creation.PNG>>
+% 
+
+
+
+%% 
+v(1:3);   %sub-vector
+v(3:end);
+w = v.';  % transpose
+
+A(2,1);   % matrix element addressing 
+A(:);     %vectorizing
+A(2,:);      % 2nd row of the matrix  
+
+B = A([2 3],[1 2]);  % sub-matrix
+C = A(1:2,2:3);      % sub-matrix
+A(:,2)=[];   % deleting the 2nd column 
+
+x1 = 0:0.1:1;
+x2 = linspace(0,1,11);
+
+%% 
+% * Special functions to generate arrays
+%
+% 
+% # zeros(m,n,..)
+% # ones(m,n,..)
+% # randn, rand
+% # eye(m,n)
+% # magic(n) (square matrix)
+%
+%% Give-it-a-try (4) 
+% Generate a 4 by 4 matrix called A whose elements are non-zero. 
+% Use array indexing to assign zero to the (1,3)th and (4,3)-th element of A. 
+%
+
+%% Array Operations
+% * *Matrix arithmetic*
+%%
+% 
+% <<mat_arit.PNG>>
+% 
+
+%%
+% * *Array arithmetic* operations are done element-by-element
+% 
+%%
+% 
+% <<array_arit.PNG>>
+% 
+%%
+% 
+% <<array_arit_exm.PNG>>
+% 
+%% 
+% * *Important matrix functions*
+% 
+% 
+% <<matrix_functions.PNG>>
+% 
+%% Give-it-a-try (5) 
+% Find the solution to the following system of linear equations. Hint: Convert
+% the system to a matrix notation 
+% 
+% 
+% $$Ax = b$$
+% 
+%%
+% 
+% <<GIAT_5.PNG>>
+% 
+%
+
+%% Multidimensional Arrays
+%
+% MATLAB allows us to create arrays with as many dimensions as necessary for any given problem.
+%%
+% 
+% <<multi_dim_array.PNG>>
+% 
+%% 
+A = rand(2,3,4);
+A(:,:,2);
+
+%% Cell Arrays
+%
+% 
+% * A cell array is a special MATLAB array whose elements are cells, containers that can hold other MATLAB arrays.
+% * In programming terms, each element of a cell array is a pointer to another data structure, and those data structures can be of different types.
+% * Cell arrays provide a great way to collect information about a problem, because all of the information can be kept together and accessed by a single name.
+% * Cell arrays use braces “{}” instead of parentheses “()” for selecting and displaying the contents of cells.
+
+%%
+% 
+% <<cell_array.PNG>>
+% 
+%% 
+my_cell{1,1}=magic(4);
+my_cell{1,2}='Hello';
+my_cell;
+celldisp(my_cell);
+
+
+%% 
+% 
+my_cell{1,1}(2,3) ; % Indexing Cells 
+my_cell{1}=[] ;  %  Deleting Cells in Arrays
+
+
+
+
+%% Structure Array
+% An array is a data type in which there is a name for the whole data structure, but individual elements within the array are known only by number.
+% A cell array is a data type in which there is a name for the whole data structure, but individual elements within the array are known only by number. However, the individual elements in the cell array may be of different types.
+%  In contrast, a structure is a data type in which each individual
+%  element has a name. 
+%  The individual elements of a structure are known as fields, and each field in a structure may have a different type.
+%  The individual fields are addressed by combining the name of the structure with the name of the field, separated by a period.
+%
+% 
+%% 
+% * Creating Structure Array
+%%
+% 
+% # A field at a time, using assignment statements
+% # All at once, using the _struct_ function
+% 
+%% 
+clear all 
+student.name = 'John';
+student.add = '12 Main street';
+student.height = 180;
+student.GPA = 'A';
+ 
+%%
+ 
+
+%% Symmbolic Toolbox
+% Symbolic Math Toolbox™ provides functions for solving, plotting, and manipulating symbolic math equations.
+% These symbols can be intermixed with nonsymbolic variable names, numbers, and
+% MATLAB functions, with the result being a symbolic expression.
+
+%%
+% 
+% * use *syms* to declare the variables you plan to use to be symbolic variables.
+% * The command *expand* multiplies out the expression;
+% * The command *factor* restores the expression to factored form.
+% * The command *simplify*  is used to express a formula as simply as possible
+
+%%
+% *Example* : 
+%%
+clear all
+syms x y            %for real variables, syms x y real
+expanded = expand((x-y)^3);
+factored = factor(expanded);
+simplified = simplify(sin(x)*cos(y)+cos(x)*sin(y));
+
+ 
+%%
+% 
+% * *Variable Precision Arithmetic* : *vpa* ('expression',n), results the
+% precision with n desired numbers
+% 
+%%   Give-it-a-try (6) 
+%  Evaluate the following expression with 5, and 50 digitis of precision
+%%
+% 
+% $$x = 32!-e^{100}$$
+% 
+
+
+%%  Other Useful Symbolic functions 
+% *  *Symbolic Differentiation and Integration*
+%%
+% 
+% # *diff(f,x,n)* : differentiates f with respect to x, n times.(e.g. n=2
+% the second derivative)
+% # *int(f,x,c,d)* : integrates f with respect to x, c/d are lower/upper
+% limits.
+% # When c and d are omitted, the application of int results in the
+% indefinite integral of f
+
+
+%% 
+
+clear all
+syms b t;
+dt = diff(b*cos(b*t),t,1);
+db2 = diff(b*cos(b*t),b,2);
+it = int(dt,t);
+
+
+
+
+%%
+% 
+% * *limit(f,x,z)*: takes the limit a symbolic expression f as  x
+% approaches the limiting value z
+% * *taylor(f,n,a,x)* : returns an n-term taylor series expansion of the
+% function f about the point a 
+% * *ilaplace(F,s,t)* : returns the inverse Laplace transform of F
+%% 
+% Inverse Laplace transform of the following expression
+% using symbolic math Toolbox can be found as
+%%
+% 
+% $$F(s)=\frac{1}{s^2+2as+1}$$
+% 
+%%
+syms s t a
+F=1/(s^2+2*a*s+1);
+f = ilaplace(F,s,t);
+pretty(simplify(f));
+
+%%
+% *  *Symbolic Plot Functions* (Easy Plot)
+% In all previous plots, we have created arrays of data to plot and passed those
+% arrays to the plotting function. MATLAB also includes functions that will
+% plot a function directly, without the necessity of creating intermediate data arrays.
+%%
+% 
+% # *ezplot* (fun,[xmin xmax]): The argument fun is either a function
+% handle, the name of an M-file function, or a character string containing
+% the functional expression to be evaluated.
+% # *fplot* (fun,[xmin xmax]):Function fplot is similar to but more sophisticated than ezplot.
+% # *ezplot3*
+% # *fplot3*
+% # *fsurf*
+% # *fmesh*
+% # *fcontour*
+%
+%
+%%  Give-it-a-try (7)
+% Use ezplot or fplot to plot the following function over 
+% $-4\pi \leq x \leq 4 \pi$
+%%
+% 
+% 
+% 
+% $$z = \frac{sin(x)}{x}$$
+% 
+% 
+
+%% Introduction to Programming in MATLAB
+% the commands entered in the Command Window cannot be saved
+% and executed again for several times. Therefore, a di®erent way of executing repeatedly
+% commands with MATLAB is:
+%%
+% 
+% # create a file 
+% # save the file
+% # run the file
+
+%%
+%%
+% 
+% *  Files containing programs using m-language are called m-files. They have an
+% extension .m.
+% 
+
+
+%%
+% *Programming instructions*
+% we present the basic programming instructions that we may
+% require in a MATLAB m-file.
+%%
+% 
+% * *If Statement*
+% 
+%%
+% 
+% <<if_statet.PNG>>
+% 
+
+%% 
+% * *If-else Statement*
+%%
+% 
+% <<if_else_stat.PNG>>
+% 
+%% 
+% * *elseif Statement*
+%%
+% 
+% <<elseif_stat.PNG>>
+% 
+
+%%
+% 
+% <<if_operators.PNG>>
+% 
+
+%%  Give-it-a-try (8)
+% Write an M-file which reads the input data for a passing grade and indicates if the student
+% passes or fails a course.  A passing grade has to be grater than 50.
+% Hint: use input() function to read the grades.
+
+%% Other Control flow commands
+% * *Switch-case statement*
+%%
+% 
+% <<switch_case_stat.PNG>>
+% 
+%%
+% * *For Loop*
+%%
+% 
+% <<for_loop.PNG>>
+% 
+%%
+% * *while Loop*
+%%
+% 
+% <<while_loop.PNG>>
+% 
+%
+%%  Give-it-a-try (9)
+% Write a program which adds all the elements of an arbitrary size
+% random-valued $m \times n$ matrix using the following double sum expression 
+% 
+% $$sum = \sum_{i=1}^{m} \; \sum_{j=1}^{n}\; a_{ij}$$
+% 
+
+
+%%
+
+%% User-Defined Functions
+% In computer
+% programming, functions are the principal tools for managing complexity. They allow a
+% complicated program to be broken up into many simpler parts, parts that are easier to
+% understand, easier to write, and easier to test.
+%%
+% 
+% # Anonymous Functions
+% # Function Files
+% 
+%% (1) Anonymous Functions 
+%%
+% 
+% # Anonymous functions are a means of creating functions for simple
+% expressions without having to create M-files or subfunctions.
+% # An anonymous function is a function that is not stored in a program file, 
+% but is associated with a variable whose data type is function_handle. 
+% # Anonymous functions can accept inputs and return outputs, just as standard functions do. However, they can contain only a single executable statement.
+
+
+%%
+%   _functionhandle=@(arguments)(expressions)_ 
+%
+%%
+% * The @ operator creates the handle, and the parentheses () immediately after the @ operator include the function input arguments.
+% * *Multiple Anonymous Functions* : The expression in an anonymous function can include another anonymous function. This is useful for passing different parameters to a function that you are evaluating over a range of values.
+%%
+% *Example* : Use anonymous function to solve the following equation:
+%%
+% 
+% $$g(c)=\int_{0}^{1} (x^2+cx+1) dx$$
+% 
+
+%% 
+clear all,
+% First method
+c1 = 2;
+g_c1 = integral(@(x) (x.^2+c1*x+1),0,1);  % g = integral(fun,xmin,xmax)
+
+% Second method
+g_c = @(c) (integral(@(x) (x.^2 + c*x + 1),0,1));
+g_c(2);
+
+%%
+% * *Anonymous functions with Multiple Inputs or Outputs*: Anonymous
+% functions require that you explicitly specify the input arguments as you would for a standard function, separating multiple inputs with commas. However, you do not explicitly define output arguments when you create an anonymous function. If the expression in the function returns multiple outputs, then you can request them when you call the function. Enclose multiple output variables in square brackets.
+%% 
+% *Example*:
+%% 
+close all, clear all
+c = 20;
+mygrid = @(x,y) ndgrid((-x:x/c:x),(-y:y/c:y));
+[x,y] = mygrid(pi,2*pi);
+z = sin(x) + cos(y);
+surf(x,y,z);
+%% 
+% * *Arrays of Anonymous Functions*: 
+% Although most MATLAB fundamental data types support multidimensional arrays, function handles must be scalars (single elements). However, you can store multiple function handles using a cell array or structure array. The most common approach is to use a cell array
+
+
+%%
+% *Example* :
+%%
+clear all
+f = {@(x)x.^2;  @(y)y+10;   @(x,y)x.^2+y+10};
+% access
+x = 1;
+y = 10;
+
+first = f{1}(x);
+second = f{2}(y);
+third = f{3}(x,y);
+
+%% (2) Function Files
+
+%%
+% 
+% * *function [y1,...,yN] = myfun(x1,...,xM)* :
+%
+% declares a function named myfun that accepts inputs x1,...,xM and returns outputs y1,...,yN. This declaration statement must be the first executable line of the function.
+% * Save the function code in a text file with a .m extension. The name of the file should match the name of the first function in the file. 
+% * Valid function names begin with an alphabetic character, and can contain letters, numbers, or underscores.
+% * Files can include multiple local functions or nested functions. 
+%
+%%
+% * Use the end keyword to indicate the end of each function in a file if:
+%%
+% # Any function in the file contains a nested function
+% # Any local function in the file uses the end keyword.
+% Otherwise, the end keyword is optional.
+
+
+%%
+% *Example* :
+%%
+% 
+% <<multiple_functions.PNG>>
+% 
+
+
+
+
+%% References
+% * [1] Matlab Help
+% * [2] Matlab programming with application for engineers, Stephen J.
+% Chapman
+% * [3] An introduction to Matlab Programming and numerical methods for
+% engineers, Timmy Siauw.
+% * [4] An engineer's guide to Matlab, Edward B. Magrab.
+% * [5] Learning to program with Matlab building GUI tools, Craig s. Lent. 
+% * [6] A Guide to Matlab for beginners and experienced users, Brian R.
+% Hunt. 
+
+
+##### SOURCE END #####
+--></body></html>
